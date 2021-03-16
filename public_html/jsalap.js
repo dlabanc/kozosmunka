@@ -1,4 +1,5 @@
 var tomb = [];
+var reverseTomb=[];
 
 function feltolt() {
     var ertek = document.getElementById("adat").value;
@@ -11,12 +12,21 @@ function feltolt() {
 function dolgozz() {
 
     feltolt();
+    Reverse();
     var osszeg = 0;
     for (var i = 0; i < tomb.length; i++) {
         osszeg += tomb[i];
     }
     document.getElementById("szoveg").innerHTML += tomb + "<br>Az összeg: " + osszeg;
 
+}
+function Reverse(){
+    var k=0;
+    for (var i = tomb.length; i >= 0; i--) {
+        reverseTomb[k] = tomb[i];
+        k++;
+    }
+    document.getElementById("szovegReverse").innerHTML +="<br>A tömb visszafele: " + reverseTomb;
 }
 function init() {
     console.log("Bejelentkeztem");
