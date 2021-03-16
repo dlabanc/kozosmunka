@@ -11,9 +11,18 @@ function feltolt() {
     }
 }
 
+function paros() {
+    for (var i = 0; i < tomb.length; i++) {
+        if (tomb[i] % 2 === 0) {
+            document.getElementById("paros").innerHTML += tomb[i]+", ";
+        }
+
+    }
+}
 
 function dolgozz() {
     feltolt();
+    paros();
     var osszeg = 0;
     for (var i = 0; i < tomb.length; i++) {
         osszeg += tomb[i];
@@ -21,6 +30,9 @@ function dolgozz() {
     document.getElementById("szoveg").innerHTML += tomb + "<br>Az összeg: " + osszeg;
 
 }
+
+
+
 function init() {
     console.log("Bejelentkeztem");
     console.log(document.getElementById("adat").value);
