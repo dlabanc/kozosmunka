@@ -1,15 +1,18 @@
 var tomb = [];
 
+
 function feltolt() {
+    var alsohatar = Number(document.getElementById("also").value);
+    var felsohatar = Number(document.getElementById("felso").value);
+    console.log(alsohatar + felsohatar);
     var ertek = document.getElementById("adat").value;
     for (var i = 0; i < ertek; i++) {
-        tomb[i] = Math.floor(Math.random() * 10) + 1; //1 és 10 közötti egész számok generálása
+        tomb[i] = Math.floor(Math.random() * felsohatar - alsohatar) + alsohatar; //1 és 10 közötti egész számok generálása
     }
 }
 
 
 function dolgozz() {
-
     feltolt();
     var osszeg = 0;
     for (var i = 0; i < tomb.length; i++) {
